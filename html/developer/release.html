@@ -57,15 +57,15 @@ relevant sections of the notes.</p></li>
 </pre></div>
 </div>
 </li>
-<li><p>Toggle <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">=</span> <span class="pre">True</span></code> to <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">=</span> <span class="pre">False</span></code> in <code class="docutils literal notranslate"><span class="pre">networkx/release.py</span></code>.</p></li>
+<li><p>Toggle <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">=</span> <span class="pre">True</span></code> to <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">=</span> <span class="pre">False</span></code> in <code class="docutils literal notranslate"><span class="pre">pykron/release.py</span></code>.</p></li>
 <li><p>Commit changes:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">networkx</span><span class="o">/</span><span class="n">release</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">pykron</span><span class="o">/</span><span class="n">release</span><span class="o">.</span><span class="n">py</span>
 <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Designate X.X release&quot;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Add the version number as a tag in git:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">s</span> <span class="p">[</span><span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">-</span><span class="nb">id</span><span class="o">&gt;</span><span class="p">]</span> <span class="n">networkx</span><span class="o">-&lt;</span><span class="n">major</span><span class="o">&gt;.&lt;</span><span class="n">minor</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;signed &lt;major&gt;.&lt;minor&gt; tag&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">s</span> <span class="p">[</span><span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">-</span><span class="nb">id</span><span class="o">&gt;</span><span class="p">]</span> <span class="n">pykron</span><span class="o">-&lt;</span><span class="n">major</span><span class="o">&gt;.&lt;</span><span class="n">minor</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;signed &lt;major&gt;.&lt;minor&gt; tag&#39;</span>
 </pre></div>
 </div>
 <p>(If you do not have a gpg key, use -m instead; it is important for
@@ -76,12 +76,12 @@ Debian packaging that the tags are annotated)</p>
 </pre></div>
 </div>
 <dl class="simple">
-<dt>(where <code class="docutils literal notranslate"><span class="pre">upstream</span></code> is the name of the</dt><dd><p><code class="docutils literal notranslate"><span class="pre">github.com:networkx/networkx</span></code> repository.)</p>
+<dt>(where <code class="docutils literal notranslate"><span class="pre">upstream</span></code> is the name of the</dt><dd><p><code class="docutils literal notranslate"><span class="pre">github.com:s4hri/pykron</span></code> repository.)</p>
 </dd>
 </dl>
 </li>
 <li><p>Review the github release page:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">networkx</span><span class="o">/</span><span class="n">networkx</span><span class="o">/</span><span class="n">releases</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">s4hri</span><span class="o">/</span><span class="n">pykron</span><span class="o">/</span><span class="n">releases</span>
 </pre></div>
 </div>
 </li>
@@ -94,28 +94,7 @@ Debian packaging that the tags are annotated)</p>
 </div>
 </li>
 <li><p>Update documentation on the web:
-The documentation is kept in a separate repo: networkx/documentation</p>
-<ul>
-<li><p>Wait for the NetworkX Travis Bot to deploy to GitHub Pages</p></li>
-<li><p>Sync your branch with the remote repo: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.</p></li>
-<li><p>Copy the documentation built by Travis.
-Assuming you are at the top-level of the <code class="docutils literal notranslate"><span class="pre">documentation</span></code> repo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># FIXME - use eol_banner.html</span>
-<span class="n">cp</span> <span class="o">-</span><span class="n">a</span> <span class="n">latest</span> <span class="n">networkx</span><span class="o">-&lt;</span><span class="n">major</span><span class="o">&gt;.&lt;</span><span class="n">minor</span><span class="o">&gt;</span>
-<span class="n">ln</span> <span class="o">-</span><span class="n">sfn</span> <span class="n">networkx</span><span class="o">-&lt;</span><span class="n">major</span><span class="o">&gt;.&lt;</span><span class="n">minor</span><span class="o">&gt;</span> <span class="n">stable</span>
-<span class="n">git</span> <span class="n">add</span> <span class="n">networkx</span><span class="o">-&lt;</span><span class="n">major</span><span class="o">&gt;.&lt;</span><span class="n">minor</span><span class="o">&gt;</span> <span class="n">stable</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Add &lt;major&gt;.&lt;minor&gt; docs&quot;</span>
-<span class="c1"># maybe squash all the Deploy GitHub Pages commits</span>
-<span class="c1"># git rebase -i HEAD~XX where XX is the number of commits back</span>
-<span class="c1"># check you didn&#39;t break anything</span>
-<span class="c1"># diff -r latest networkx-&lt;major&gt;.&lt;minor&gt;</span>
-<span class="c1"># you will then need to force the push so be careful!</span>
-<span class="n">git</span> <span class="n">push</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
+The documentation is kept in a branch: s4hri/pyrkon gh-pages</p></li>
 </ul>
 <blockquote>
 <div><ul class="simple">
@@ -123,8 +102,8 @@ Assuming you are at the top-level of the <code class="docutils literal notransla
 </ul>
 <blockquote>
 <div><ul>
-<li><p>Toggle <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">=</span> <span class="pre">False</span></code> to <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">=</span> <span class="pre">True</span></code> in <code class="docutils literal notranslate"><span class="pre">networkx/release.py</span></code>.</p></li>
-<li><p>Update <code class="docutils literal notranslate"><span class="pre">major</span></code> and <code class="docutils literal notranslate"><span class="pre">minor</span></code> in <code class="docutils literal notranslate"><span class="pre">networkx/release.py</span></code>.</p></li>
+<li><p>Toggle <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">=</span> <span class="pre">False</span></code> to <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">=</span> <span class="pre">True</span></code> in <code class="docutils literal notranslate"><span class="pre">pykron/release.py</span></code>.</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">major</span></code> and <code class="docutils literal notranslate"><span class="pre">minor</span></code> in <code class="docutils literal notranslate"><span class="pre">pykron/release.py</span></code>.</p></li>
 <li><p>Append the following to <code class="docutils literal notranslate"><span class="pre">doc/_templates/layout.html</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="n">document</span> <span class="o">%</span><span class="p">}</span>
 </pre></div>
@@ -139,7 +118,7 @@ Assuming you are at the top-level of the <code class="docutils literal notransla
 </div></blockquote>
 <ul>
 <li><p>Commit and push changes:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">networkx</span><span class="o">/</span><span class="n">release</span><span class="o">.</span><span class="n">py</span> <span class="n">doc</span><span class="o">/</span><span class="n">_templates</span><span class="o">/</span><span class="n">layout</span><span class="o">.</span><span class="n">html</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">pykron</span><span class="o">/</span><span class="n">release</span><span class="o">.</span><span class="n">py</span> <span class="n">doc</span><span class="o">/</span><span class="n">_templates</span><span class="o">/</span><span class="n">layout</span><span class="o">.</span><span class="n">html</span>
 <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Bump release version&quot;</span>
 <span class="n">git</span> <span class="n">push</span> <span class="n">upstream</span> <span class="n">master</span>
 </pre></div>
@@ -147,25 +126,6 @@ Assuming you are at the top-level of the <code class="docutils literal notransla
 </li>
 </ul>
 </div></blockquote>
-<ul class="simple">
-<li><p>Update the web frontpage:
-The webpage is kept in a separate repo: networkx/website</p>
-<ul>
-<li><p>Sync your branch with the remote repo: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.
-If you try to <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">github</span></code> when your branch is out of sync, it
-creates headaches.</p></li>
-<li><p>Update <code class="docutils literal notranslate"><span class="pre">build/index.html</span></code>.</p></li>
-<li><p>Edit <code class="docutils literal notranslate"><span class="pre">build/_static/docversions.js</span></code> and commit</p></li>
-<li><p>Push your changes to the repo.</p></li>
-<li><p>Deploy using <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">github</span></code>.</p></li>
-</ul>
-</li>
-<li><p>Post release notes on mailing list.</p>
-<ul>
-<li><p><a class="reference external" href="mailto:networkx-discuss&#37;&#52;&#48;googlegroups&#46;com">networkx-discuss<span>&#64;</span>googlegroups<span>&#46;</span>com</a></p></li>
-</ul>
-</li>
-</ul>
 </div>
 
 
